@@ -1,0 +1,38 @@
+{
+  "name": "toop-virtualagent",
+  "version": "1.0.0",
+  "description": "basic api and server ",
+  "main": "index.ts",
+  "dependencies": {
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
+    "koa": "^2.8.1",
+    "koa-router": "^7.4.0",
+    "koa-send": "^5.0.0",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "cross-env": "^5.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp dev",
+    "build:prod": "gulp prod",
+    "dev": "cross-env NODE_ENV=dev nodemon dist/index.js",
+    "prod": "cross-env NODE_ENV=prod nodemon dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anton-lam/toop-virtualagent.git"
+  },
+  "author": "anton-lam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anton-lam/toop-virtualagent/issues"
+  },
+  "homepage": "https://github.com/anton-lam/toop-virtualagent#readme"
+}
