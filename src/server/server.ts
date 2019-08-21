@@ -1,6 +1,10 @@
 import * as Koa from 'koa';
 import * as send from 'koa-send';
 import * as Router from 'koa-router';
+import * as bodyParser from 'koa-bodyparser';
+import * as bearerToken from 'koa-bearer-token';
+import * as compress from 'koa-compress';
+import { applyEndpoints } from './endpoints';
 
 /**
  * Class that sets up the API server 
@@ -13,8 +17,14 @@ export default class APIServer {
       this.setupServer(app, router);
     }
 
-  // A method to set up all the server configuration
+  /**
+   * A method to set up all the server configuration
+   * @param app Koa middleware handler
+   * @param router middlewater for router routes 
+   */
   private setupServer(app: Koa, router: Router) {
+    
+    this.setupMiddlware(app);
 
     //basic ping for testing purposes
     router.get('/ping', async ctx => {
@@ -22,6 +32,7 @@ export default class APIServer {
         ctx.body = { message: 'ok' };
       });
 
+       applyEndpoints(app);
     
     app.use(router.routes());
 
@@ -31,6 +42,19 @@ export default class APIServer {
     app.use(async ctx => {
         await send(ctx, `public/index.html`);
       });
+  }
+
+  /**
+   * Setup required middleware to 
+   * Help parsing req.body to JSON format for easy use
+   * extracts token to req.token
+   * compress req
+   * @param app 
+   */
+  private setupMiddlware(app) {
+    app.use(bodyParser());
+    app.use(bearerToken());
+    app.use(compress());
   }
 
   // A public method that returns the server as callback

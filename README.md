@@ -2,6 +2,8 @@
 
 Basic api and server for virtual agent interview. 
 
+Requirements: Curent node.js which can be downloaded [here](https://nodejs.org/en/download/current/)
+
 Quick set up would be to run the following commands (more detailed information below):
 1. npm i 
 2. npm run build:prod
@@ -10,7 +12,7 @@ Quick set up would be to run the following commands (more detailed information b
 
 
 ## directory Structure
-  - `/src` : The source directory where all source files are stored. This includese all TypeScrip, GraphQL and any other files.
+  - `/src` : The source directory where all source files are stored. This includese all TypeScript and any other files. `/src/front-end` contains the Angular uncompiled app. `/src/server` contains the API webserver. 
   - `/dist` : The distribution directory where all JavaScript files are compiled to for deployment. This is where all files are executed from. I would generally put this in the .gitignore but for ease of interview viewing purposes, leaving it committed. 
   - `/public` : This is the directory where any static files are served from (Angular Application). Note that any path that is not matched by the router will redirect to the public directory.
 
@@ -22,7 +24,7 @@ npm i
 
 Installs the dependant packages necessary to run the server. 
 
-Gulp [Gulp](https://www.npmjs.com/package/gulp) is used as the task runner to build server files into the /dist folder, as the server is written in TS and needs to be compiled into JS before being executed. 
+[Gulp](https://www.npmjs.com/package/gulp) is used as the task runner to build server files into the /dist folder, as the server is written in TS and needs to be compiled into JS before being executed. 
 
 This can be run by executing the following command:
 ```

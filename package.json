@@ -8,6 +8,9 @@
     "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.1",
     "koa": "^2.8.1",
+    "koa-bearer-token": "^1.0.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
     "koa-router": "^7.4.0",
     "koa-send": "^5.0.0",
     "typescript": "^3.5.3"
