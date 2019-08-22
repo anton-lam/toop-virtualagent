@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const koa_send_1 = __importDefault(require("koa-send"));
 const koa_bodyparser_1 = __importDefault(require("koa-bodyparser"));
 const koa_bearer_token_1 = __importDefault(require("koa-bearer-token"));
 const koa_compress_1 = __importDefault(require("koa-compress"));
@@ -22,9 +21,6 @@ class APIServer {
         });
         endpoints_1.applyEndpoints(app);
         app.use(router.routes());
-        app.use(async (ctx) => {
-            await koa_send_1.default(ctx, `public/index.html`);
-        });
     }
     setupMiddlware(app) {
         app.use(koa_bodyparser_1.default());
@@ -52,3 +48,4 @@ class APIServer {
     }
 }
 exports.default = APIServer;
+//# sourceMappingURL=server.js.map

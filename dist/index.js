@@ -12,3 +12,4 @@ exports.server = http_1.default.createServer(exports.app.start());
 exports.server.listen(80, () => {
     console.log(`HTTP server listening on port 80`);
 });
+//# sourceMappingURL=index.js.map

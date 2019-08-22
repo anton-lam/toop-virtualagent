@@ -52,3 +52,4 @@ exports.register = async (ctx) => {
     ctx.status = 201;
     ctx.body = { message: "success" };
 };
+//# sourceMappingURL=auth.js.map

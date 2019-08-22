@@ -3,7 +3,6 @@
     "forceConsistentCasingInFileNames": true,
     "compilerOptions": {
       "baseUrl": "./",
-      "watch": true,
       "target": "es2017",
       "rootDir": "src",
       "outDir": "dist",

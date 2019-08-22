@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const koa_router_1 = __importDefault(require("koa-router"));
 const auth_1 = require("./auth/auth");
-const content_1 = require("./api/users/content");
+const content_1 = require("./api/content/content");
 function applyEndpoints(app) {
     const router = new koa_router_1.default();
     router.post('/authorize', auth_1.login);
@@ -14,3 +14,4 @@ function applyEndpoints(app) {
     app.use(router.routes());
 }
 exports.applyEndpoints = applyEndpoints;
+//# sourceMappingURL=endpoints.js.map
