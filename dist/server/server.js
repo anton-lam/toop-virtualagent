@@ -27,6 +27,19 @@ class APIServer {
         app.use(bodyParser());
         app.use(bearerToken());
         app.use(compress());
+        app.use(async function (ctx, next) {
+            try {
+                await next();
+            }
+            catch (err) {
+                if (!err.isBoom) {
+                    ctx.status = err.output.statusCode;
+                    ctx.body = err.output.payload.message;
+                }
+                else {
+                }
+            }
+        });
     }
     start() {
         return this.app.callback();

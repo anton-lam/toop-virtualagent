@@ -24,7 +24,6 @@ export function signToken(user: User) {
  * @returns { Object } A User and signed JWT.
  */
 export const login = async ctx => {
-    console.log("LOGIN!");
     const email: string = ctx.request.body.email;
     const password: string = ctx.request.body.password;
 

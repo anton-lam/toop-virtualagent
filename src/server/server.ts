@@ -48,14 +48,32 @@ export default class APIServer {
   /**
    * Setup required middleware to 
    * Help parsing req.body to JSON format for easy use
-   * extracts token to req.token
-   * compress req
+   * extracts token to req.token, compress req
+   * + global error handling
    * @param app 
    */
   private setupMiddlware(app) {
     app.use(bodyParser());
     app.use(bearerToken());
     app.use(compress());
+
+
+    // custom error handling utilising boom 
+    app.use(async function(ctx, next) {
+      try {
+        await next();
+      } catch(err) {
+
+        if(err.isBoom) {
+          ctx.status = err.output.statusCode;
+          ctx.body = err.output.payload.message;
+        } else {
+          console.log(err);
+          ctx.status = 500;
+          ctx.body = "Internal Server Error";
+        }
+      }
+    });
   }
 
   // A public method that returns the server as callback

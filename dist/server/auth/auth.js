@@ -12,7 +12,6 @@ function signToken(user) {
 }
 exports.signToken = signToken;
 exports.login = async (ctx) => {
-    console.log("LOGIN!");
     const email = ctx.request.body.email;
     const password = ctx.request.body.password;
     var user = null;
