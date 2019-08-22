@@ -6,9 +6,10 @@ Requirements: Curent node.js which can be downloaded [here](https://nodejs.org/e
 
 Quick set up would be to run the following commands (more detailed information below):
 1. npm i 
-2. npm run build:prod
-3. npm run prod
-4. navigate to localhost:8080
+2. npm run dev
+3. navigate to localhost:4200
+
+optional: localhost:80 is the API
 
 ## testing
 

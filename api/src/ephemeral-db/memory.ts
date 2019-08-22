@@ -1,4 +1,4 @@
-import { User } from "src/server/api/users/user.model";
+import { User } from "api/src/server/api/users/user.model";
 
 /**
  * Internal, ephemeral file mocking a database 
