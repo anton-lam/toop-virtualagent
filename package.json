@@ -34,7 +34,7 @@
     "build:prod": "gulp prod",
     "dev": "cross-env NODE_ENV=dev nodemon dist/index.js",
     "prod": "cross-env NODE_ENV=prod nodemon dist/index.js",
-    "test": "cross-env NODE_ENV=test jest --coverage --passWithNoTests --testPathPattern='\\w+\\.e2e\\.tsx?'"
+    "test": "cross-env NODE_ENV=test jest --coverage --passWithNoTests --runInBand --testPathPattern='\\w+\\.e2e\\.tsx?'"
   },
   "repository": {
     "type": "git",

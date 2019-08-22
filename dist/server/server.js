@@ -1,9 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const send = require("koa-send");
-const bodyParser = require("koa-bodyparser");
-const bearerToken = require("koa-bearer-token");
-const compress = require("koa-compress");
+const koa_send_1 = __importDefault(require("koa-send"));
+const koa_bodyparser_1 = __importDefault(require("koa-bodyparser"));
+const koa_bearer_token_1 = __importDefault(require("koa-bearer-token"));
+const koa_compress_1 = __importDefault(require("koa-compress"));
 const endpoints_1 = require("./endpoints");
 class APIServer {
     constructor(app, router) {
@@ -20,13 +23,13 @@ class APIServer {
         endpoints_1.applyEndpoints(app);
         app.use(router.routes());
         app.use(async (ctx) => {
-            await send(ctx, `public/index.html`);
+            await koa_send_1.default(ctx, `public/index.html`);
         });
     }
     setupMiddlware(app) {
-        app.use(bodyParser());
-        app.use(bearerToken());
-        app.use(compress());
+        app.use(koa_bodyparser_1.default());
+        app.use(koa_bearer_token_1.default());
+        app.use(koa_compress_1.default());
         app.use(async function (ctx, next) {
             try {
                 await next();

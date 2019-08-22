@@ -1,6 +1,5 @@
 import request from 'supertest';
 import { server} from "../../index";
-import { users } from 'src/ephemeral-db/memory';
 import { User } from '../api/users/user.model';
 
 
@@ -20,8 +19,6 @@ describe('/authorize', function() {
     afterAll(async () => {
         await server.close();
     });
-
-    
 
     describe('login success', function() {
         it('should login successfully and return token', async function() {

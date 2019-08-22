@@ -1,6 +1,7 @@
 import  Koa from 'koa';
 import  Router from 'koa-router';
 import { login, register } from './auth/auth';
+import { getContent } from './api/content/content';
 
 
 /**
@@ -20,6 +21,7 @@ export function applyEndpoints(app: Koa) {
 
     router.post('/authorize', login);
     router.post('/register', register);
+    router.get('/content', getContent);
 
     app.use(router.routes());
 }

@@ -1,10 +1,16 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const Router = require("koa-router");
+const koa_router_1 = __importDefault(require("koa-router"));
 const auth_1 = require("./auth/auth");
+const content_1 = require("./api/users/content");
 function applyEndpoints(app) {
-    const router = new Router();
+    const router = new koa_router_1.default();
     router.post('/authorize', auth_1.login);
+    router.post('/register', auth_1.register);
+    router.get('/content', content_1.getContent);
     app.use(router.routes());
 }
 exports.applyEndpoints = applyEndpoints;

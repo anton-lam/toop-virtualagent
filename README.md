@@ -10,6 +10,12 @@ Quick set up would be to run the following commands (more detailed information b
 3. npm run prod
 4. navigate to localhost:8080
 
+## testing
+
+End2End testing for the server can be run with
+```
+npm run test
+```
 
 ## directory Structure
   - `/src` : The source directory where all source files are stored. This includese all TypeScript and any other files. `/src/front-end` contains the Angular uncompiled app. `/src/server` contains the API webserver. 
