@@ -19,17 +19,22 @@
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "jest": "^24.5.0",
+    "jest-extended": "^0.11.2",
+    "ts-jest": "^24.0.2",
+    "@types/jest": "^24.0.11",
     "@types/node": "^12.7.2",
+    "cross-env": "^5.2.0",
     "nodemon": "^1.19.1",
-    "ts-node": "^8.3.0",
-    "cross-env": "^5.2.0"
+    "supertest": "^4.0.2",
+    "ts-node": "^8.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp dev",
     "build:prod": "gulp prod",
     "dev": "cross-env NODE_ENV=dev nodemon dist/index.js",
-    "prod": "cross-env NODE_ENV=prod nodemon dist/index.js"
+    "prod": "cross-env NODE_ENV=prod nodemon dist/index.js",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --coverage --detectOpenHandles --passWithNoTests --testPathPattern='\\w+\\.e2e\\.tsx?'"
   },
   "repository": {
     "type": "git",

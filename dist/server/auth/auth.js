@@ -31,3 +31,6 @@ exports.login = async (ctx) => {
         token
     };
 };
+function someFunction() {
+}
+exports.default = someFunction;

@@ -32,11 +32,14 @@ class APIServer {
                 await next();
             }
             catch (err) {
-                if (!err.isBoom) {
+                if (err.isBoom) {
                     ctx.status = err.output.statusCode;
                     ctx.body = err.output.payload.message;
                 }
                 else {
+                    console.log(err);
+                    ctx.status = 500;
+                    ctx.body = "Internal Server Error";
                 }
             }
         });

@@ -1,9 +1,9 @@
-import * as Koa from 'koa';
-import * as send from 'koa-send';
-import * as Router from 'koa-router';
-import * as bodyParser from 'koa-bodyparser';
-import * as bearerToken from 'koa-bearer-token';
-import * as compress from 'koa-compress';
+import  Koa from 'koa';
+import  send from 'koa-send';
+import  Router from 'koa-router';
+import  bodyParser from 'koa-bodyparser';
+import  bearerToken from 'koa-bearer-token';
+import  compress from 'koa-compress';
 import { applyEndpoints } from './endpoints';
 
 /**

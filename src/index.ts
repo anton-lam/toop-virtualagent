@@ -1,6 +1,6 @@
-import * as http from 'http';
-import * as Koa from 'koa';
-import * as Router from 'koa-router';
+import http from 'http';
+import Koa from 'koa';
+import Router from 'koa-router';
 import APIServer from './server/server';
 
 
@@ -15,6 +15,6 @@ export const app = new APIServer(new Koa(), new Router());
 
 server = http.createServer(app.start());
 
-server.listen(8080, () => {
-    console.log(`HTTP server listening on port 8080`);
+server.listen(80, () => {
+    console.log(`HTTP server listening on port 80`);
   });
