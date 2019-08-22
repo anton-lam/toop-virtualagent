@@ -1,5 +1,7 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
+import { login } from './auth/auth';
+
 
 /**
  * Applies the common endpoints needed to view content, auth
@@ -13,9 +15,14 @@ import * as Router from 'koa-router';
  * @author anton-lam
  */
 
-export const applyEndpoints = (app: Koa) => {
-  
-  // Create the router with the prefix '/api
-  const router = new Router({ prefix: '/api' });
+export function applyEndpoints(app: Koa) {
+    const router = new Router();
 
+    router.post('/authorize', login);
+
+    app.use(router.routes());
 }
+
+
+
+

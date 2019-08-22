@@ -32,7 +32,8 @@ export default class APIServer {
         ctx.body = { message: 'ok' };
       });
 
-       applyEndpoints(app);
+    //apply basic endpoints
+    applyEndpoints(app);
     
     app.use(router.routes());
 
