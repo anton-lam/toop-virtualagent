@@ -1,4 +1,5 @@
 import  Koa from 'koa';
+import  send from 'koa-send';
 import  Router from 'koa-router';
 import  bodyParser from 'koa-bodyparser';
 import  bearerToken from 'koa-bearer-token';
@@ -35,6 +36,13 @@ export default class APIServer {
     applyEndpoints(app);
     
     app.use(router.routes());
+
+    // Middleware function that handles all unmatched URL routes
+    // All request should be directed to the index.html file
+    // The entry point for the angular application
+    app.use(async ctx => {
+        await send(ctx, `public/index.html`);
+      });
   }
 
   /**

@@ -2,9 +2,11 @@
     "compileOnSave": true,
     "forceConsistentCasingInFileNames": true,
     "compilerOptions": {
-      "baseUrl": ".",
-      "rootDir": ".",
+      "baseUrl": "./",
+      "watch": true,
       "target": "es2017",
+      "rootDir": "src",
+      "outDir": "dist",
       "module": "commonjs",
       "moduleResolution": "node",
       "strict": false,
