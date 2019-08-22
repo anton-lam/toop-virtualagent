@@ -1,5 +1,7 @@
 import request from 'supertest';
 import { server} from "../../index";
+import { users } from 'src/ephemeral-db/memory';
+import { User } from '../api/users/user.model';
 
 
 /**
@@ -9,14 +11,16 @@ import { server} from "../../index";
  */
 describe('/authorize', function() {
 
-    afterAll(async () => {
-        await server.close();
-    });
-
+    /** Mocks */
     const user = {
         email: "abc@gmail.com",
         password: "password"   
     }
+
+    afterAll(async () => {
+        await server.close();
+    });
+
     
 
     describe('login success', function() {
@@ -40,6 +44,78 @@ describe('/authorize', function() {
 
                 expect(result.status).toEqual(401);
                 expect(result.body.token).toBeUndefined();
+        });
+    });
+});
+
+
+describe('/register', function() {
+
+    var user;
+
+    afterAll(async () => {
+        await server.close();
+    });
+
+    beforeEach(async () => {
+            /** Mocks */
+            user = {
+                email: "test@gmail.com",
+                password: "password",
+                verifyPassword: "password"
+            }
+    });
+    
+
+    describe('register success', function() {
+        it('should register successfully', async function() {
+            const result = await request(server)
+                .post(`/register`)
+                .send(user);
+
+                expect(result.status).toEqual(201);
+
+                //confirm it's in memory too
+                expect(User.findByEmail(user.email)).not.toBeNull();
+        });
+    });
+
+    describe('invalid email', function() {
+        it('fail registering', async function() {
+            user.email = "bademail";
+
+            const result = await request(server)
+                .post(`/register`)
+                .send(user);
+
+                expect(result.status).toEqual(400);
+                expect(result.error.text).toEqual(`invalid email`);
+        });
+    });
+
+    describe('unmatching passwords', function() {
+        it('fail registering', async function() {
+            user.password = "badpassword";
+
+            const result = await request(server)
+                .post(`/register`)
+                .send(user);
+
+                expect(result.status).toEqual(400);
+                expect(result.error.text).toEqual(`passwords do not match`);
+        });
+    });
+
+    describe('email already exists', function() {
+        it('fail registering', async function() {
+            user.email = "abc@gmail.com";
+
+            const result = await request(server)
+                .post(`/register`)
+                .send(user);
+
+                expect(result.status).toEqual(400);
+                expect(result.error.text).toEqual(`account already exists under this email!`);
         });
     });
 });
