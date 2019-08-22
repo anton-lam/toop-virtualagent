@@ -1,2 +1,4 @@
 # Vendor modules/classes
 node_modules/
+coverage
+dist

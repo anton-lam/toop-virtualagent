@@ -13,7 +13,7 @@ Quick set up would be to run the following commands (more detailed information b
 
 ## directory Structure
   - `/src` : The source directory where all source files are stored. This includese all TypeScript and any other files. `/src/front-end` contains the Angular uncompiled app. `/src/server` contains the API webserver. 
-  - `/dist` : The distribution directory where all JavaScript files are compiled to for deployment. This is where all files are executed from. I would generally put this in the .gitignore but for ease of interview viewing purposes, leaving it committed. 
+  - `/dist` : The distribution directory where all JavaScript files are compiled to for deployment. This is where all files are executed from. Not committed to repo.
   - `/public` : This is the directory where any static files are served from (Angular Application). Note that any path that is not matched by the router will redirect to the public directory.
 
 ## building the server
