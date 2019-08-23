@@ -86,7 +86,7 @@ describe('/register', function() {
                 .send(user);
 
                 expect(result.status).toEqual(400);
-                expect(result.error.text).toEqual(`invalid email`);
+                expect(result.error.text).toEqual(`Invalid email`);
         });
     });
 
@@ -99,7 +99,7 @@ describe('/register', function() {
                 .send(user);
 
                 expect(result.status).toEqual(400);
-                expect(result.error.text).toEqual(`passwords do not match`);
+                expect(result.error.text).toEqual(`Passwords do not match`);
         });
     });
 
@@ -112,7 +112,7 @@ describe('/register', function() {
                 .send(user);
 
                 expect(result.status).toEqual(400);
-                expect(result.error.text).toEqual(`account already exists under this email!`);
+                expect(result.error.text).toEqual(`Account already exists under this email!`);
         });
     });
 });
