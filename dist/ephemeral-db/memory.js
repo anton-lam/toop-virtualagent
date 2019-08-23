@@ -6,6 +6,12 @@ exports.users = [
         email: "abc@gmail.com",
         isVerified: true,
         password: "password"
+    },
+    {
+        id: 2,
+        email: "lazy@gmail.com",
+        isVerified: false,
+        password: "queensofthestoneage"
     }
 ];
 exports.verificationTokens = [];
