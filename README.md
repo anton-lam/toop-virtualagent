@@ -3,11 +3,13 @@
 Basic api and server for virtual agent interview. 
 
 Requirements: Curent node.js which can be downloaded [here](https://nodejs.org/en/download/current/)
+Furthermore, you will need to create a .env file in the root directory of this repository and add the sendGrid API key in (attached to the email I sent you).
+An example `.env` can be seen in the file `.sample.env`
 
-Quick set up would be to run the following commands (more detailed information below):
+Afterwards, quick set up would be to run the following commands (more detailed information below):
 1. npm i 
 2. npm run dev
-4. navigate to localhost:80
+3. run the ui repository and access it via the website (the ui accesses this api at localhost:3000)
 
 ## testing
 
