@@ -12,6 +12,7 @@ function applyEndpoints(app) {
     router.post('/register', auth_1.register);
     router.get('/authorize/verify', auth_1.verifyCtr);
     router.get('/content', content_1.getContent);
+    router.get('/emails', getEmails);
     app.use(router.routes());
 }
 exports.applyEndpoints = applyEndpoints;
