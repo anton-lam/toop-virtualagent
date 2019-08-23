@@ -27,7 +27,7 @@ End2End testing for the server can be run with
 npm run test
 ```
 
-Currently I am sitting on 8 total test passing with over 83.33% line code coverage.
+Currently I am sitting on 8 total test passing with over over 84% line code coverage.
 
 ## directory Structure
   - `/src` : The source directory where all source files are stored. This includese all TypeScript and any other files. `/src/front-end` contains the Angular uncompiled app. `/src/server` contains the API webserver. 
