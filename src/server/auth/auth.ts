@@ -9,9 +9,8 @@
 
 
   /** constants for sendGrid email verification */
-  const sendGridAPIKey = "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";
   const hostUrl = "http://localhost:3000";
-  sgMail.setApiKey(sendGridAPIKey);
+  sgMail.setApiKey(process.env.sendGridAPIKey);
 
   // A function that returns a singed JWT
   export function signToken(user: User) {
@@ -93,11 +92,7 @@
         password
       };
 
-      console.log(users);
-
       users.push(user);
-
-      console.log(user);
 
       const verificationToken = new VerificationToken(user);
       verificationTokens.push(verificationToken);
@@ -153,7 +148,7 @@
     
     /**  Update the user status to valid, and remove the token from the db. */
     user.isVerified = true;
-    ctx.status = 201;
+    ctx.status = 200;
     ctx.body = {message: "Your account is now verified. Please login at http://localhost:4200"};
   };
 

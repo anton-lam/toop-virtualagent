@@ -22,8 +22,7 @@ function signToken(user) {
 }
 exports.signToken = signToken;
 exports.login = async (ctx) => {
-    const email = ctx.request.body.email;
-    const password = ctx.request.body.password;
+    const { email, password } = ctx.request.body;
     var re = /\S+@\S+\.\S+/;
     if (!re.test(email)) {
         throw boom_2.default.badRequest(`invalid email`);
@@ -43,9 +42,7 @@ exports.login = async (ctx) => {
     };
 };
 exports.register = async (ctx) => {
-    const email = ctx.request.body.email;
-    const password = ctx.request.body.password;
-    const verifyPassword = ctx.request.body.verifyPassword;
+    const { email, password, verifyPassword } = ctx.request.body;
     if (password != verifyPassword) {
         throw boom_2.default.badRequest(`passwords do not match`);
     }
@@ -63,9 +60,7 @@ exports.register = async (ctx) => {
         isVerified: false,
         password
     };
-    console.log(memory_1.users);
     memory_1.users.push(user);
-    console.log(user);
     const verificationToken = new sendgrid_token_model_1.VerificationToken(user);
     memory_1.verificationTokens.push(verificationToken);
     await sendVerificationEmail(user.email, verificationToken.token);
@@ -73,6 +68,7 @@ exports.register = async (ctx) => {
     ctx.body = { message: "success" };
 };
 async function sendVerificationEmail(to, token) {
+    console.log("SENDING VERIFICATION EMAIL...");
     const msg = {
         to,
         from: 'toop-interview@gg.com.au',
@@ -83,30 +79,25 @@ async function sendVerificationEmail(to, token) {
 }
 ;
 exports.verifyCtr = async (ctx) => {
+    const { email, token } = ctx.query;
     console.log("VERIFYCTR");
-    const email = ctx.query.email;
-    const token = ctx.query.token;
-    console.log(ctx.query);
     console.log(email);
     console.log(token);
     const user = await user_model_1.User.findByEmail(email);
     if (!user)
         throw boom_2.default.badRequest('Email address is not available');
-    console.log("111111111111");
     let vToken = null;
     for (let vt of memory_1.verificationTokens) {
         if (vt.token === token) {
             vToken = vt;
         }
     }
-    console.log(vToken);
     if (!vToken)
         throw boom_2.default.badRequest('Token is not valid');
-    console.log("222222222222222222");
     if (vToken.userId.toString() !== user.id.toString())
         throw boom_2.default.badRequest('Token does not match email address');
-    console.log("9999999999999999999999");
     user.isVerified = true;
-    return { message: `User with ${user.email} has been verified` };
+    ctx.status = 200;
+    ctx.body = { message: "Your account is now verified. Please login at http://localhost:4200" };
 };
 //# sourceMappingURL=auth.js.map
