@@ -7,9 +7,10 @@ import { users } from '../../../ephemeral-db/memory';
  * @class User
  */
 export class User {
+    id: number;
     email: string;
+    isVerified: boolean;
     password: string; 
-
 
     /**
      * Find if email exists in memory

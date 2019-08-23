@@ -10,6 +10,7 @@ function applyEndpoints(app) {
     const router = new koa_router_1.default();
     router.post('/authorize', auth_1.login);
     router.post('/register', auth_1.register);
+    router.get('/authorize/verify', auth_1.verifyCtr);
     router.get('/content', content_1.getContent);
     app.use(router.routes());
 }

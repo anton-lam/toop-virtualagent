@@ -25,7 +25,7 @@ describe('/content', function() {
         it('should return full content passage', async function() {
 
             //get mock token 
-            const token = await signToken({ email: "lol@gmail.com", password: null});
+            const token = await signToken({ id: 3, isVerified: true, email: "lol@gmail.com", password: null});
 
             const result = await request(server)
                 .get(`/content`)

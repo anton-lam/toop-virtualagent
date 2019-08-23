@@ -5,6 +5,7 @@
   "main": "index.ts",
   "dependencies": {
     "@koa/cors": "^3.0.0",
+    "@sendgrid/mail": "^6.4.0",
     "bcryptjs": "^2.4.3",
     "boom": "^7.3.0",
     "del": "^5.0.0",
