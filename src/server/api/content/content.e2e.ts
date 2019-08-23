@@ -19,7 +19,7 @@ describe('/content', function() {
                 .get(`/content`);
 
                 expect(result.status).toEqual(200);
-                expect(result.body.text).toEqual(`${contentText.slice(0, contentText.length / 2)}. .`);
+                expect(result.body.text).toEqual(`${contentText.slice(0, contentText.length / 2)}...`);
         });
 
         it('should return full content passage', async function() {

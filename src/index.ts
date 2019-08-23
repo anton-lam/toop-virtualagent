@@ -15,6 +15,6 @@ export const app = new APIServer(new Koa(), new Router());
 
 server = http.createServer(app.start());
 
-server.listen(80, () => {
-    console.log(`HTTP server listening on port 80`);
+server.listen(3000, () => {
+    console.log(`HTTP server listening on port 3000`);
   });

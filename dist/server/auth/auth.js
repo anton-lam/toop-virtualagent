@@ -19,6 +19,10 @@ exports.signToken = signToken;
 exports.login = async (ctx) => {
     const email = ctx.request.body.email;
     const password = ctx.request.body.password;
+    var re = /\S+@\S+\.\S+/;
+    if (!re.test(email)) {
+        throw boom_2.default.badRequest(`invalid email`);
+    }
     const user = user_model_1.User.findByEmail(email);
     if (!user)
         throw boom_1.unauthorized('Unauthorized');

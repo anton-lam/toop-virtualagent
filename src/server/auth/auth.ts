@@ -28,6 +28,12 @@ export const login = async ctx => {
     const email: string = ctx.request.body.email;
     const password: string = ctx.request.body.password;
 
+    //validate email address
+    var re = /\S+@\S+\.\S+/;
+    if(!re.test(email)) {
+      throw Boom.badRequest(`invalid email`);
+    }
+
     const user = User.findByEmail(email);
   
     if (!user) throw unauthorized('Unauthorized');
