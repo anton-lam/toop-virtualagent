@@ -9,6 +9,7 @@
     "bcryptjs": "^2.4.3",
     "boom": "^7.3.0",
     "del": "^5.0.0",
+    "dotenv": "^8.1.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.8.1",
     "koa-bearer-token": "^1.0.0",
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "cross-env NODE_ENV=dev nodemon dist/index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon -r dotenv/config dist/index.js",
     "test": "cross-env NODE_ENV=test jest --coverage --passWithNoTests --runInBand --testPathPattern='\\w+\\.e2e\\.tsx?'"
   },
   "repository": {

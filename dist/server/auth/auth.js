@@ -10,9 +10,7 @@ const jsonwebtoken_1 = require("jsonwebtoken");
 const boom_2 = __importDefault(require("boom"));
 const mail_1 = __importDefault(require("@sendgrid/mail"));
 const sendgrid_token_model_1 = require("./sendgrid-token.model");
-const sendGridAPIKey = "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";
 const hostUrl = "http://localhost:3000";
-mail_1.default.setApiKey(sendGridAPIKey);
 function signToken(user) {
     return jsonwebtoken_1.sign({}, "wem39fka", {
         subject: String(user.email),
@@ -25,7 +23,7 @@ exports.login = async (ctx) => {
     const { email, password } = ctx.request.body;
     var re = /\S+@\S+\.\S+/;
     if (!re.test(email)) {
-        throw boom_2.default.badRequest(`invalid email`);
+        throw boom_2.default.badRequest(`Invalid email`);
     }
     const user = user_model_1.User.findByEmail(email);
     if (!user)
@@ -34,7 +32,7 @@ exports.login = async (ctx) => {
         throw boom_1.unauthorized('Unauthorized');
     }
     if (!user.isVerified) {
-        throw boom_2.default.badRequest('email not verified');
+        throw boom_2.default.badRequest('Email not verified');
     }
     const token = signToken(user);
     ctx.body = {
@@ -44,15 +42,15 @@ exports.login = async (ctx) => {
 exports.register = async (ctx) => {
     const { email, password, verifyPassword } = ctx.request.body;
     if (password != verifyPassword) {
-        throw boom_2.default.badRequest(`passwords do not match`);
+        throw boom_2.default.badRequest(`Passwords do not match`);
     }
     var re = /\S+@\S+\.\S+/;
     if (!re.test(email)) {
-        throw boom_2.default.badRequest(`invalid email`);
+        throw boom_2.default.badRequest(`Invalid email`);
     }
     let user = user_model_1.User.findByEmail(email);
     if (user) {
-        throw boom_2.default.badRequest(`account already exists under this email!`);
+        throw boom_2.default.badRequest(`Account already exists under this email!`);
     }
     user = {
         id: Math.floor(Math.random() * 20),
@@ -68,21 +66,23 @@ exports.register = async (ctx) => {
     ctx.body = { message: "success" };
 };
 async function sendVerificationEmail(to, token) {
-    console.log("SENDING VERIFICATION EMAIL...");
     const msg = {
         to,
         from: 'toop-interview@gg.com.au',
         subject: 'Verify Your Email',
         text: `Click on this link to verify your email ${hostUrl}/authorize/verify?token=${token}&email=${to}`
     };
-    return await mail_1.default.send(msg);
+    try {
+        mail_1.default.setApiKey(process.env.SEND_GRID_API_KEY);
+        return await mail_1.default.send(msg);
+    }
+    catch (err) {
+        throw boom_2.default.badRequest("invalid API Key");
+    }
 }
 ;
 exports.verifyCtr = async (ctx) => {
     const { email, token } = ctx.query;
-    console.log("VERIFYCTR");
-    console.log(email);
-    console.log(token);
     const user = await user_model_1.User.findByEmail(email);
     if (!user)
         throw boom_2.default.badRequest('Email address is not available');

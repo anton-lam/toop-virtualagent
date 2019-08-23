@@ -1,3 +1,7 @@
+// Import and use the .env config file
+const dotenv = require('dotenv');
+dotenv.config();
+
 module.exports = {
     setupFilesAfterEnv: ['jest-extended'],
     testEnvironment: 'node',

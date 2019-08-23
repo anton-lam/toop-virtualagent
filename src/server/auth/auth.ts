@@ -10,7 +10,6 @@
 
   /** constants for sendGrid email verification */
   const hostUrl = "http://localhost:3000";
-  sgMail.setApiKey(process.env.sendGridAPIKey);
 
   // A function that returns a singed JWT
   export function signToken(user: User) {
@@ -36,7 +35,7 @@
       //validate email address
       var re = /\S+@\S+\.\S+/;
       if(!re.test(email)) {
-        throw Boom.badRequest(`invalid email`);
+        throw Boom.badRequest(`Invalid email`);
       }
 
       const user = User.findByEmail(email);
@@ -48,7 +47,7 @@
       }
 
       if(!user.isVerified) {
-        throw Boom.badRequest('email not verified');
+        throw Boom.badRequest('Email not verified');
       }
 
       // create a signed JWT Token
@@ -69,19 +68,19 @@
       const { email, password, verifyPassword } = ctx.request.body;
 
       if(password != verifyPassword) {
-      throw Boom.badRequest(`passwords do not match`);
+      throw Boom.badRequest(`Passwords do not match`);
       }
 
       //validate email address
       var re = /\S+@\S+\.\S+/;
       if(!re.test(email)) {
-        throw Boom.badRequest(`invalid email`);
+        throw Boom.badRequest(`Invalid email`);
       }
 
       //check if email is taken
       let user: User = User.findByEmail(email);
       if(user) {
-        throw Boom.badRequest(`account already exists under this email!`)
+        throw Boom.badRequest(`Account already exists under this email!`)
       }
 
       //add user to memory
@@ -116,8 +115,15 @@
       from: 'toop-interview@gg.com.au',
       subject: 'Verify Your Email',
       text: `Click on this link to verify your email ${hostUrl}/authorize/verify?token=${token}&email=${to}`
-    };
-    return await sgMail.send(msg);
+    };   
+
+    try {
+      sgMail.setApiKey(process.env.SEND_GRID_API_KEY );
+      return await sgMail.send(msg);
+    } catch (err) {
+      throw Boom.badRequest("invalid API Key");
+    }
+
   };
 
   /**
