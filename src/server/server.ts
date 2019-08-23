@@ -2,6 +2,7 @@ import  Koa from 'koa';
 import  Router from 'koa-router';
 import  bodyParser from 'koa-bodyparser';
 import  bearerToken from 'koa-bearer-token';
+import cors from '@koa/cors';
 import  compress from 'koa-compress';
 import { applyEndpoints } from './endpoints';
 
@@ -48,6 +49,7 @@ export default class APIServer {
     app.use(bodyParser());
     app.use(bearerToken());
     app.use(compress());
+    app.use(cors());
 
 
     // custom error handling utilising boom 

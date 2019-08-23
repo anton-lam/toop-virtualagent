@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const koa_bodyparser_1 = __importDefault(require("koa-bodyparser"));
 const koa_bearer_token_1 = __importDefault(require("koa-bearer-token"));
+const cors_1 = __importDefault(require("@koa/cors"));
 const koa_compress_1 = __importDefault(require("koa-compress"));
 const endpoints_1 = require("./endpoints");
 class APIServer {
@@ -26,6 +27,7 @@ class APIServer {
         app.use(koa_bodyparser_1.default());
         app.use(koa_bearer_token_1.default());
         app.use(koa_compress_1.default());
+        app.use(cors_1.default());
         app.use(async function (ctx, next) {
             try {
                 await next();
