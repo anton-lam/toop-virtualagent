@@ -2,8 +2,8 @@
 
 Basic api and server for virtual agent interview. 
 
-Requirements: Current node.js which can be downloaded [here](https://nodejs.org/en/download/current/)
-Furthermore, you will need to create a .env file in the root directory of this repository and add the sendGrid API key in (attached to the email I sent you).
+Requirements: Current node.js which can be downloaded [here](https://nodejs.org/en/download/current/).
+Furthermore, you will need to create a `.env` file in the root directory of this repository and add the sendGrid API key in (attached to the email I sent you).
 An example `.env` can be seen in the file `.sample.env`
 
 Afterwards, quick set up would be to run the following commands (more detailed information below):
@@ -11,6 +11,14 @@ Afterwards, quick set up would be to run the following commands (more detailed i
 1. npm i 
 2. npm run dev
 3. run the ui [repository](https://github.com/anton-lam/toop-virtualagent-ui) and access it via the website (the ui accesses this api at localhost:3000)
+
+## features 
+So far I have completed
+1. login/auth POST endpoint with json web tokens with validation
+2. content GET endpoint with token validation
+3. registration POST endpoint with validation
+4. email verification GET endpoint
+5. end to end testing
 
 ## testing
 
