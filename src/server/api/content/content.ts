@@ -42,21 +42,23 @@ empty streets are filled for a moment with the whirr of the swift, consecutive w
 like Prometheus, fire, but the sound of fire. And when we increase or reduce the wads of cotton-wool, it is as though we were pressing alternately one and 
 the other of the two pedals with which we have extended the resonant compass of the outer world.
 
-Only there are also suppressions of sound which are not temporary. The man who has grown completely deaf cannot even heat a pan of milk by his bedside, but he must keep an eye open to watch, 
-on the tilted lid, for the white, arctic reflexion, like that of a coming snowstorm, which is the warning sign which he is wise to obey, by cutting off (as Our Lord bade the waves be still) 
-the electric current; for already the swelling, jerkily climbing egg of boiling milk-film is reaching its climax in a series of sidelong movements, has filled and set bellying the drooping 
-sails with which the cream has skimmed its surface, sends in a sudden storm a scud of pearly substance flying overboard—sails which the cutting off of the current, if the electric storm is 
-hushed in time, will fold back upon themselves and let fall with the ebbing tide, changed now to magnolia petals. But if the sick man should not be quick enough in taking the necessary precautions, 
-presently, when his drowned books and watch are seen barely emerging from the milky tide, he will be obliged to call the old nurse who, though he be himself an eminent statesman or a famous writer, 
-will tell him that he has no more sense than a child of five. At other times in the magic chamber, between us and the closed door, a person who was not there a moment ago makes his appearance; it is 
-a visitor whom we did not hear coming in, and who merely gesticulates, like a figure in one of those little puppet theatres, so restful for those who have taken a dislike to the spoken tongue. 
-And for this totally deaf man, since the loss of a sense adds as much beauty to the world as its acquisition, it is with ecstasy that he walks now upon an earth grown almost an Eden, in which sound 
-has not yet been created. The highest waterfalls unfold for his eyes alone their ribbons of crystal, stiller than the glassy sea, like the cascades of Paradise. As sound was for him before his deafness 
-the perceptible form in which the cause of a movement was draped, objects moved without sound seemed to be being moved also without cause; deprived of all resonant quality, they shew a spontaneous activity, 
-seem to be alive. They move, halt, become alight of their own accord. Of their own accord they vanish in the air like the winged monsters of prehistoric days. In the solitary and unneighboured home of the 
-deaf man the service which, before his infirmity was complete, was already shewing an increased discretion, was being carried on in silence, is now assured him with a sort of surreptitious deftness, by mutes, 
-as at the court of a fairy-tale king. And, as upon the stage, the building on which the deaf man looks from his window—be it barracks, church, or town hall—is only so much scenery. If one day it should fall to 
-the ground, it may emit a cloud of dust and leave visible ruins; but, less material even than a palace on the stage, though it has not the same exiguity, it will subside in the magic universe without letting 
+Only there are also suppressions of sound which are not temporary. The man who has grown completely deaf cannot even heat a pan of milk by his bedside, 
+but he must keep an eye open to watch, on the tilted lid, for the white, arctic reflexion, like that of a coming snowstorm, which is the warning sign which he is wise to obey, 
+by cutting off (as Our Lord bade the waves be still) the electric current; for already the swelling, jerkily climbing egg of boiling milk-film is reaching its climax in a series 
+of sidelong movements, has filled and set bellying the drooping sails with which the cream has skimmed its surface, sends in a sudden storm a scud of pearly substance flying overboard—sails 
+which the cutting off of the current, if the electric storm is hushed in time, will fold back upon themselves and let fall with the ebbing tide, changed now to magnolia petals. 
+But if the sick man should not be quick enough in taking the necessary precautions, presently, when his drowned books and watch are seen barely emerging from the milky tide, he 
+will be obliged to call the old nurse who, though he be himself an eminent statesman or a famous writer, will tell him that he has no more sense than a child of five. At other times 
+in the magic chamber, between us and the closed door, a person who was not there a moment ago makes his appearance; it is a visitor whom we did not hear coming in, and who merely gesticulates, 
+like a figure in one of those little puppet theatres, so restful for those who have taken a dislike to the spoken tongue. 
+And for this totally deaf man, since the loss of a sense adds as much beauty to the world as its acquisition, it is with ecstasy that he walks now upon an earth grown almost an Eden, 
+in which sound has not yet been created. The highest waterfalls unfold for his eyes alone their ribbons of crystal, stiller than the glassy sea, like the cascades of Paradise. 
+As sound was for him before his deafness the perceptible form in which the cause of a movement was draped, objects moved without sound seemed to be being moved also without cause; 
+deprived of all resonant quality, they shew a spontaneous activity, seem to be alive. They move, halt, become alight of their own accord. Of their own accord they vanish in the air 
+like the winged monsters of prehistoric days. In the solitary and unneighboured home of the deaf man the service which, before his infirmity was complete, was already shewing an 
+increased discretion, was being carried on in silence, is now assured him with a sort of surreptitious deftness, by mutes, as at the court of a fairy-tale king. And, as upon the stage, 
+the building on which the deaf man looks from his window—be it barracks, church, or town hall—is only so much scenery. If one day it should fall to the ground, it may emit a cloud of 
+dust and leave visible ruins; but, less material even than a palace on the stage, though it has not the same exiguity, it will subside in the magic universe without letting 
 the fall of its heavy blocks of stone tarnish, with anything so vulgar as sound, the chastity of the prevailing silence.`
 
 
