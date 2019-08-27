@@ -9,8 +9,9 @@ Afterwards, quick set up would be to run the following commands (more detailed i
 1. Navigate to this directory in your choice of terminal
 2. npm i 
 3. create `.env` file with sendGrid API key (attached in email). An example can be seen in file `.sample.env`. Be sure it's named `.env` and not `env`!
-4. npm run dev
-5. run the ui [repository](https://github.com/anton-lam/toop-virtualagent-ui) and access it via the website (the ui accesses this api at localhost:3000)
+4. npm run build 
+5. npm run dev
+6. run the ui [repository](https://github.com/anton-lam/toop-virtualagent-ui) and access it via the website (the ui accesses this api at localhost:3000)
 
 ## features 
 So far I have completed
